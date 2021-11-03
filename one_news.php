@@ -6,7 +6,7 @@ $mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com"
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-$results = $mysqli->query("SELECT * FROM midwestemo.news WHERE `id` = $id");
+$results = $mysqli->query("SELECT * FROM `news` WHERE `id` = $id");
 $news = $results->fetch_object();
 ?>
 <!DOCTYPE html>
