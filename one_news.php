@@ -14,14 +14,13 @@ $news = $results->fetch_object();
 <head>
     <meta charset="utf-8">
     <title>Midwest Emo</title>
-    <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
 <div id="container">
     <div id="news" class="bordered">
         <div class="one-news">
-            <img src="<?php echo $news->pic ?>" alt="" class="img-news">
+            <img src="<?php echo $news->pic ?>" alt="" class="img-fluid">
             <div class="content">
                 <p class="headline"><?php echo $news->headline ?></p>
                 <p class="annonce"><?php echo $news->text ?></p>
