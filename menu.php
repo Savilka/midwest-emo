@@ -10,8 +10,10 @@
         <p class="nav-button"><a href="login.php" data-title="афиша">войти</a></p>
         <?php
         if (isset($_SESSION['admin']) && ($_SESSION['admin'] > 0)) {
-            print ('<p class="nav-button"><a href="add_news.php" data-title="афиша">добавить новость</a></p>');
-            print ('<p class="nav-button"><a href="unlogin.php" data-title="афиша">выйти</a></p>');
+            ?>
+            <p class="nav-button"><a href="add_news.php" data-title="афиша">добавить новость</a></p>
+            <p class="nav-button"><a href="unlogin.php" data-title="афиша">выйти</a></p>
+            <?php
         }
         ?>
     </div>

@@ -4,12 +4,17 @@ $mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com"
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-$headline = $_POST["headline"];
-$text = $_POST["text"];
-$announce = $_POST["announce"];
-$pic = $_POST["pic"];
+
 $timestamp = date('Y-m-d H:i:s');
-$err = $mysqli->query("INSERT INTO `news` (date, headline, announce, text, pic) VALUE ('$timestamp', '$headline', '$announce',
-                                                                        '$text', '$pic')");
+$headline = $_POST["headline"];
+$announce = $_POST["announce"];
+$text = $_POST["text"];
+$pic = $_POST["pic"];
+
+
+$stmt = $mysqli->prepare("INSERT INTO news(date, headline, announce, text, pic) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $timestamp, $headline, $announce, $text, $pic);
+$stmt->execute();
+
 header('Location: news.php', false);
 

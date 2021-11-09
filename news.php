@@ -20,19 +20,19 @@ $results = $mysqli->query("SELECT * FROM `news`");
         <table cellspacing="0" class="bordered">
             <?php
             while ($row = $results->fetch_object()) {
-                echo <<<HTML
-                    <tr>
-                        <td>
-                            <div class="one-news">
-                                <img src="$row->pic" alt="" class="img-news">
-                                <div class="content">
-                                    <p class="headline"><a href="one_news.php?id=$row->id">$row->headline</a></p>
-                                    <p class="annonce">$row->announce</p>
-                                </div>
+                ?>
+                <tr>
+                    <td>
+                        <div class="one-news">
+                            <img src="<?php echo $row->pic ?>" alt="" class="img-news">
+                            <div class="content">
+                                <p class="headline"><a href="one_news.php?id=<?php echo $row->id ?>"><?php echo $row->headline ?></a></p>
+                                <p class="annonce"><?php echo $row->announce ?></p>
                             </div>
-                        </td>
-                    </tr>    
-HTML;
+                        </div>
+                    </td>
+                </tr>
+                <?php
             }
             ?>
         </table>

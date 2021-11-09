@@ -26,7 +26,9 @@ $news = $results->fetch_object();
                 <p class="annonce"><?php echo $news->text ?></p>
                 <?php
                 if (isset($_SESSION['admin']) && ($_SESSION['admin'] === 1)) {
-                    print '<p class="annonce"><a href="delete_news.php?id='.$id.'" style="color: #c23838">удалить</a></p>';
+                    ?>
+                    <p class="annonce"><a href="delete_news.php?id=<?php echo $id ?>" style="color: #c23838">удалить</a></p>
+                    <?php
                 }
                 ?>
             </div>

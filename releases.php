@@ -19,13 +19,13 @@ $results = $mysqli->query("SELECT * FROM `releases`");
     <div id="releases" class="bordered">
         <?php
         while ($row = $results->fetch_object()) {
-            echo <<<HTML
-                <div class="release">
-                    <img src="$row->pic" alt="preview" class="img-album">
-                    <h2 class="artist">$row->artist</h2>
-                    <h3 class="album">$row->album</h3>
-                </div>
-HTML;
+            ?>
+            <div class="release">
+                <img src="<?php echo $row->pic ?>" alt="preview" class="img-album">
+                <h2 class="artist"><?php echo $row->artist ?></h2>
+                <h3 class="album"><?php echo $row->album ?></h3>
+            </div>
+            <?php
         }
         ?>
     </div>

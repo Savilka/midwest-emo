@@ -134,6 +134,8 @@ td {
 }
 
 .img-news {
+    width: 100%;
+    height: auto;
     max-width: 250px;
     max-height: 250px;
 }

@@ -5,5 +5,9 @@ $mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com"
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-$results = $mysqli->query("DELETE FROM `news` WHERE id = '$id'");
+
+$stmt = $mysqli->prepare("DELETE FROM news WHERE id = (?)");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+
 header('Location: news.php', false);
