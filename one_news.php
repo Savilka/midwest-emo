@@ -2,7 +2,7 @@
 session_start();
 $id = (int)$_GET['id'];
 $mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "t3yx98bakhvb6qcu",
-    "x220h26wnon03a7t", "msf3ai2ttoov1rtw");
+    "qd7hagdyc9mp44g5", "msf3ai2ttoov1rtw");
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
@@ -34,7 +34,8 @@ require('menu.php')
             <?php
             if (isset($_SESSION['admin']) && ($_SESSION['admin'] === 1)) {
                 ?>
-                <p class="annonce"><a href="delete_news.php?id=<?php echo $id ?>" style="color: #c23838">удалить</a></p>
+                <p><a class="text-danger" href="delete_news.php?id=<?php echo $id ?>">удалить</a></p>
+                <p><a class="text-warning" href="edit_news.php?id=<?php echo $id ?>">редактировать</a></p>
                 <?php
             }
             ?>

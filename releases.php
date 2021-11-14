@@ -1,7 +1,7 @@
 <?php
 session_start();
 $mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "t3yx98bakhvb6qcu",
-    "x220h26wnon03a7t", "msf3ai2ttoov1rtw");
+    "qd7hagdyc9mp44g5", "msf3ai2ttoov1rtw");
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
@@ -21,12 +21,12 @@ $results = $mysqli->query("SELECT * FROM `releases`");
 <?php
 require('menu.php')
 ?>
-<div class="container">
-    <div class="row my-3 justify-content-evenly">
+<div class="container ">
+    <div class="row my-0 justify-content-evenly gy-4">
         <?php
         while ($row = $results->fetch_object()) {
             ?>
-            <div class="col-sm-3">
+            <div class="col-sm-3 text-center">
                 <img class="w-100" src="<?php echo $row->pic ?>" alt="">
                 <h3 class="text-color my-2"><?php echo $row->artist ?></h3>
                 <h4 class="text-color"><?php echo $row->album ?></h4>

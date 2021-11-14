@@ -31,3 +31,21 @@ body {
 .text-color {
     color: #f9f4ef;
 }
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0.56);
+    border: none #f9f4ef;
+    resize: none;
+    color: #f9f4ef;
+}
+
+.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.56);
+    border: none;
+    box-shadow:0 0 10px #f9f4ef;
+    color: #f9f4ef;
+}
+
+.btn-dark {
+    color: #f9f4ef;
+}
