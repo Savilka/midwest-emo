@@ -15,6 +15,7 @@ $results = $mysqli->query("SELECT * FROM `news`");
     <title>Midwest Emo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
 <body>
 <?php
 require('menu.php');
@@ -23,21 +24,22 @@ require('menu.php');
     <?php
     while ($row = $results->fetch_object()) {
         ?>
-        <div class="row my-3">
+        <div class="row my-3 ">
             <div class="col-sm-3">
-                <img class="w-100" src="<?php echo $row->pic ?>">
+                <img class="w-100" src="<?php echo $row->pic ?>" alt="">
             </div>
             <div class="col-sm-9">
-                <h2><a href="one_news.php?id=<?php echo $row->id ?>"><?php echo $row->headline ?></a></h2>
-                <p><?php echo $row->announce ?></p>
+                <h2><a href="one_news.php?id=<?php echo $row->id ?>" class="my-link"
+                       style="text-decoration: none"><?php echo $row->headline ?></a></h2>
+                <p class="text-color fs-4"><?php echo $row->announce ?></p>
             </div>
         </div>
         <?php
     }
     ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 </body>
 </html>

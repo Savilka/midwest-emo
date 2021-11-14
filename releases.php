@@ -11,29 +11,36 @@ $results = $mysqli->query("SELECT * FROM `releases`");
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Релизы</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<div id="container">
-    <div id="releases" class="bordered">
+<?php
+require('menu.php')
+?>
+<div class="container">
+    <div class="row my-3 justify-content-evenly">
         <?php
         while ($row = $results->fetch_object()) {
             ?>
-            <div class="release">
-                <img src="<?php echo $row->pic ?>" alt="preview" class="img-album">
-                <h2 class="artist"><?php echo $row->artist ?></h2>
-                <h3 class="album"><?php echo $row->album ?></h3>
+            <div class="col-sm-3">
+                <img class="w-100" src="<?php echo $row->pic ?>" alt="">
+                <h3 class="text-color my-2"><?php echo $row->artist ?></h3>
+                <h4 class="text-color"><?php echo $row->album ?></h4>
             </div>
             <?php
         }
         ?>
     </div>
-    <?php
-    require('menu.php')
-    ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 </body>
 </html>
 
