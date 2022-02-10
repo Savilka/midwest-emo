@@ -1,7 +1,7 @@
 <?php
 $id = (int)$_GET['id'];
-$mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "t3yx98bakhvb6qcu",
-    "qd7hagdyc9mp44g5 ", "msf3ai2ttoov1rtw");
+$mysqli = new mysqli("n2o93bb1bwmn0zle.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "yfnk95pabxc7o8pb",
+    "cji3ywltts8o22ui", "qytxwbkkn14vj0yd");
 if ($mysqli->connect_errno) {
     echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
